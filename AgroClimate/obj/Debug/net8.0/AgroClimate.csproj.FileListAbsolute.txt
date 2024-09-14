@@ -1,0 +1,8 @@
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.csproj.AssemblyReference.cache
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.AssemblyInfoInputs.cache
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.AssemblyInfo.cs
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.csproj.CoreCompileInputs.cache
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\henri\Downloads\Sprint\SprintAgroClimate\AgroClimate\obj\Debug\net8.0\AgroClimate.sourcelink.json
