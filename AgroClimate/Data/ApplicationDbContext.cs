@@ -1,5 +1,5 @@
 using AgroClimate.Models;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace AgroClimate.Data;
 
