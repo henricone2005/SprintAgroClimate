@@ -11,8 +11,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace AgroClimate.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240915225959_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240916224330_NewMigrations")]
+    partial class NewMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,15 +32,15 @@ namespace AgroClimate.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("NVARCHAR2(11)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("NVARCHAR2(100)");
-
-                    b.Property<string>("cpf")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("NVARCHAR2(11)");
 
                     b.HasKey("Id");
 

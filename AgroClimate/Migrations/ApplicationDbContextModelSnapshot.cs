@@ -29,15 +29,15 @@ namespace AgroClimate.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("NVARCHAR2(11)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("NVARCHAR2(100)");
-
-                    b.Property<string>("cpf")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("NVARCHAR2(11)");
 
                     b.HasKey("Id");
 
