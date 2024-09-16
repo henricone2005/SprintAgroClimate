@@ -1,22 +1,27 @@
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AgroClimate.Models;
-
-public class Fazenda
+namespace AgroClimate.Models
 {
-     [Key]
+    public class Fazenda
+    {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; } // ID auto incremento
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string? Nome { get; set; }
+        public required string Nome { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string? Area { get; set; }
-
+        public required string Area { get; set; }
 
         
+
+        
+      
+    }
+
 }
