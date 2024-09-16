@@ -17,6 +17,6 @@ public class Fazenda
         [StringLength(50)]
         public string? Area { get; set; }
 
-public ICollection<AgricultorFazenda> AgricultorFazendas { get; set; }
+
         
 }

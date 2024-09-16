@@ -16,5 +16,5 @@ public class Agricultor
         [Required]
         [StringLength(11)]
         public string? cpf { get; set; }
-public ICollection<AgricultorFazenda> AgricultorFazendas { get; set; }
+
 }
