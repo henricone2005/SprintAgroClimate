@@ -12,12 +12,13 @@ namespace AgroClimate.Models
 
         [Required]
         [StringLength(100)]
-        public required string Nome { get; set; }
+        public  string Nome { get; set; }
 
         [Required]
         [StringLength(50)]
-        public required string Area { get; set; }
+        public  string Area { get; set; }
 
+public List<AgricultorFazenda> AgricultorFazendas { get; set; } = new List<AgricultorFazenda>();
         
 
         

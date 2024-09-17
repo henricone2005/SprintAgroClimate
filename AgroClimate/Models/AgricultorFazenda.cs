@@ -6,9 +6,9 @@ namespace AgroClimate.Models
     public class AgricultorFazenda
     {
         public int AgricultorId { get; set; }
-        public required Agricultor Agricultor { get; set; } // Se não for anulável, deve ser inicializado
+        public Agricultor Agricultor { get; set; } = new Agricultor(); // Inicialize com um novo objeto
 
         public int FazendaId { get; set; }
-        public required Fazenda Fazenda { get; set; } // Se não for anulável, deve ser inicializado
+        public Fazenda Fazenda { get; set; } = new Fazenda(); // Inicialize com um novo objeto
     }
 }
