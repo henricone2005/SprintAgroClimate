@@ -19,7 +19,7 @@ namespace AgroClimate.Models
         [StringLength(11)]
         public string Cpf { get; set; }
 
-         public List<AgricultorFazenda> AgricultorFazendas { get; set; } = new List<AgricultorFazenda>();
+          public ICollection<Fazenda> Fazendas { get; set; } = new List<Fazenda>();
         
         
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj": {}
+    "c:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj": {
+    "c:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj",
+        "projectUniqueName": "c:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj",
         "projectName": "AgroClimate",
-        "projectPath": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj",
+        "projectPath": "c:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\AgroClimate.csproj",
         "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\obj\\",
+        "outputPath": "c:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\henri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,13 +43,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -67,7 +71,11 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.9.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.1.2, )"
             }
           },
           "imports": [

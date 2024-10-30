@@ -10,24 +10,29 @@ namespace AgroClimate.Data
 
         public DbSet<Agricultor> Agricultores { get; set; }
         public DbSet<Fazenda> Fazendas { get; set; }
-        public DbSet<AgricultorFazenda> AgricultorFazendas { get; set; }
+    
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+      protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<AgricultorFazenda>()
-                .HasKey(af => new { af.AgricultorId, af.FazendaId });
-
-            modelBuilder.Entity<AgricultorFazenda>()
-                .HasOne(af => af.Agricultor)
-                .WithMany(a => a.AgricultorFazendas)
-                .HasForeignKey(af => af.AgricultorId);
-
-            modelBuilder.Entity<AgricultorFazenda>()
-                .HasOne(af => af.Fazenda)
-                .WithMany(f => f.AgricultorFazendas)
-                .HasForeignKey(af => af.FazendaId);
+            // Configurando a relação muitos-para-muitos entre Paciente e Plano
+            modelBuilder.Entity<Agricultor>()
+                .HasMany(p => p.Fazendas)
+                .WithMany(p => p.Agricultores)
+                .UsingEntity<Dictionary<string, object>>(
+                    "AgricultorFazenda", // Nome da tabela de junção
+                    j => j
+                        .HasOne<Fazenda>()
+                        .WithMany()
+                        .HasForeignKey("FazendaId"), // Chave estrangeira
+                    j => j
+                        .HasOne<Agricultor>()
+                        .WithMany()
+                        .HasForeignKey("AgricultorId"), // Chave estrangeira
+                    j =>
+                    {
+                        j.HasKey("AgricultorId", "FazendaId"); // Define a chave primária
+                    }
+                );
         }
     }
 }
