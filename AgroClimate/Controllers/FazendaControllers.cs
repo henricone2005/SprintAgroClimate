@@ -11,7 +11,7 @@ public class FazendaControllers : ControllerBase
 {
     private readonly ApplicationDbContext _context;
 
-   public FazendaControllers(ApplicationDbContext context)
+    public FazendaControllers(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -19,20 +19,23 @@ public class FazendaControllers : ControllerBase
     public class CreateFazendaDto
     {
         public string Nome { get; set; } = string.Empty;
-        public string Area { get; set; } = string.Empty;
-      
+        public double Area { get; set; } // Altera de string para double
     }
 
     public class UpdateFazendaDto
     {
         public string Nome { get; set; } = string.Empty; 
-        public string Area { get; set; } = string.Empty;
-       
+        public double Area { get; set; } // Altera de string para double
     }
-    // POST: api/planos
+
     [HttpPost]
     public async Task<ActionResult<Fazenda>> CreateFazenda(CreateFazendaDto dto)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var fazenda = new Fazenda
         {
             Nome = dto.Nome,
@@ -45,19 +48,17 @@ public class FazendaControllers : ControllerBase
         return CreatedAtAction(nameof(GetFazendaById), new { id = fazenda.Id }, fazenda);
     }
 
-    // GET: api/planos
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Fazenda>>> GetFazendas()
     {
         return await _context.Fazendas.ToListAsync();
     }
 
-    // GET: api/planos/{id}
     [HttpGet("{id}")]
     public async Task<ActionResult<Fazenda>> GetFazendaById(int id)
     {
         var fazenda = await _context.Fazendas
-            .Include(p => p.Agricultores) // Inclui os pacientes associados
+            .Include(p => p.Agricultores) // Inclui os agricultores associados
             .FirstOrDefaultAsync(p => p.Id == id);
 
         if (fazenda == null)
@@ -65,13 +66,17 @@ public class FazendaControllers : ControllerBase
             return NotFound($"Fazenda com ID {id} não encontrado.");
         }
 
-        return fazenda;
+        return Ok(fazenda); // Retorna Ok com o objeto
     }
 
-   
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateFazenda(int id, UpdateFazendaDto dto)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var fazenda = await _context.Fazendas.FindAsync(id);
         if (fazenda == null)
         {
@@ -80,7 +85,6 @@ public class FazendaControllers : ControllerBase
 
         fazenda.Nome = dto.Nome;
         fazenda.Area = dto.Area;
-        
 
         _context.Entry(fazenda).State = EntityState.Modified;
         await _context.SaveChangesAsync();
@@ -88,7 +92,6 @@ public class FazendaControllers : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/planos/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteFazenda(int id)
     {
@@ -103,5 +106,4 @@ public class FazendaControllers : ControllerBase
 
         return NoContent();
     }
- 
 }

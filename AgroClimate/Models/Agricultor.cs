@@ -1,5 +1,5 @@
-using System.Collections.Generic;  // Para List<T> e IEnumerable<T>
 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,14 +13,14 @@ namespace AgroClimate.Models
 
         [Required]
         [StringLength(100)]
-       public  string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty; // Inicializando como string vazia
 
         [Required]
         [StringLength(11)]
-        public string Cpf { get; set; }
+        public string Cpf { get; set; } = string.Empty; // Inicializando como string vazia
 
-          public ICollection<Fazenda> Fazendas { get; set; } = new List<Fazenda>();
-        
-        
+        // Inicializando a coleção de Fazendas
+        public ICollection<Fazenda> Fazendas { get; set; } = new List<Fazenda>();
     }
 }
+

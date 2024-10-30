@@ -12,11 +12,11 @@ namespace AgroClimate.Models
 
         [Required]
         [StringLength(100)]
-        public  string Nome { get; set; }
+        public  string Nome { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]
-        public  string Area { get; set; }
+        public  double Area { get; set; }
 
     public ICollection<Agricultor> Agricultores { get; set; } = new List<Agricultor>();
 
