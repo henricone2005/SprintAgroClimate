@@ -16,7 +16,7 @@ namespace AgroClimate.Models
 
         [Required]
         [StringLength(50)]
-        public  double Area { get; set; }
+        public  int Area { get; set; }
 
     public ICollection<Agricultor> Agricultores { get; set; } = new List<Agricultor>();
 

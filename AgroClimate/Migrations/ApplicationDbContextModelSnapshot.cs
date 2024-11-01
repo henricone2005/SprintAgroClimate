@@ -56,7 +56,7 @@ namespace AgroClimate.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Agricultores");
+                    b.ToTable("NomeDaTabelaRealNoBanco", (string)null);
                 });
 
             modelBuilder.Entity("AgroClimate.Models.Fazenda", b =>
@@ -67,9 +67,9 @@ namespace AgroClimate.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Area")
+                    b.Property<int>("Area")
                         .HasMaxLength(50)
-                        .HasColumnType("BINARY_DOUBLE");
+                        .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -78,7 +78,7 @@ namespace AgroClimate.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fazendas");
+                    b.ToTable("FazendasSP");
                 });
 
             modelBuilder.Entity("AgricultorFazenda", b =>

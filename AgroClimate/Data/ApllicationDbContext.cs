@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using AgroClimate.Models;
 
@@ -8,26 +7,28 @@ namespace AgroClimate.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Agricultor> Agricultores { get; set; }
-        public DbSet<Fazenda> Fazendas { get; set; }
-    
+        public DbSet<Agricultor> AgricultoresSP { get; set; }
+        public DbSet<Fazenda> FazendasSP { get; set; }
 
-      protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configurando a relação muitos-para-muitos entre Paciente e Plano
+            // Mapeamento da tabela de Agricultores
+            modelBuilder.Entity<Agricultor>().ToTable("NomeDaTabelaRealNoBanco");
+
+            // Configurando a relação muitos-para-muitos entre Agricultor e Fazenda
             modelBuilder.Entity<Agricultor>()
-                .HasMany(p => p.Fazendas)
-                .WithMany(p => p.Agricultores)
+                .HasMany(a => a.Fazendas)
+                .WithMany(f => f.Agricultores)
                 .UsingEntity<Dictionary<string, object>>(
-                    "AgricultorFazenda", // Nome da tabela de junção
+                    "AgricultorFazenda",
                     j => j
                         .HasOne<Fazenda>()
                         .WithMany()
-                        .HasForeignKey("FazendaId"), // Chave estrangeira
+                        .HasForeignKey("FazendaId"),
                     j => j
                         .HasOne<Agricultor>()
                         .WithMany()
-                        .HasForeignKey("AgricultorId"), // Chave estrangeira
+                        .HasForeignKey("AgricultorId"),
                     j =>
                     {
                         j.HasKey("AgricultorId", "FazendaId"); // Define a chave primária

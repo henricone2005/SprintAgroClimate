@@ -53,7 +53,7 @@ namespace AgroClimate.Controllers
     };
             if (dto.FazendaIds != null && dto.FazendaIds.Any())
             {
-                var fazendas = await _context.Fazendas
+                var fazendas = await _context.FazendasSP
                     .Where(p => dto.FazendaIds.Contains(p.Id))
                     .ToListAsync();
 
@@ -68,7 +68,7 @@ namespace AgroClimate.Controllers
                 }
             }
 
-            _context.Agricultores.Add(agricultor);
+            _context.AgricultoresSP.Add(agricultor);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetAgricultorById), new { id = agricultor.Id }, agricultor);
@@ -77,7 +77,7 @@ namespace AgroClimate.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AgricultorDto>>> GetAgricultores()
         {
-            var agricultores = await _context.Agricultores
+            var agricultores = await _context.AgricultoresSP
                 .Select(p => new AgricultorDto
                 {
                     Id = p.Id,
@@ -93,7 +93,7 @@ namespace AgroClimate.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<AgricultorDto>> GetAgricultorById(int id)
         {
-            var agricultor = await _context.Agricultores
+            var agricultor = await _context.AgricultoresSP
                 .Include(p => p.Fazendas)
                 .Select(p => new AgricultorDto
                 {
@@ -115,7 +115,7 @@ namespace AgroClimate.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAgricultor(int id, UpdateAgricultorDto dto)
         {
-            var agricultor = await _context.Agricultores.FindAsync(id);
+            var agricultor = await _context.AgricultoresSP.FindAsync(id);
             if (agricultor == null)
             {
                 return NotFound($"Agricultor com ID {id} não encontrado.");
@@ -133,13 +133,13 @@ namespace AgroClimate.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAgricultor(int id)
         {
-            var agricultor = await _context.Agricultores.FindAsync(id);
+            var agricultor = await _context.AgricultoresSP.FindAsync(id);
             if (agricultor == null)
             {
                 return NotFound($"Agricultor com ID {id} não encontrado.");
             }
 
-            _context.Agricultores.Remove(agricultor);
+            _context.AgricultoresSP.Remove(agricultor);
             await _context.SaveChangesAsync();
 
             return NoContent();

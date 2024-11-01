@@ -19,13 +19,13 @@ public class FazendaControllers : ControllerBase
     public class CreateFazendaDto
     {
         public string Nome { get; set; } = string.Empty;
-        public double Area { get; set; } // Altera de string para double
+        public int Area { get; set; } // Altera de string para double
     }
 
     public class UpdateFazendaDto
     {
         public string Nome { get; set; } = string.Empty; 
-        public double Area { get; set; } // Altera de string para double
+        public int Area { get; set; } // Altera de string para double
     }
 
     [HttpPost]
@@ -42,7 +42,7 @@ public class FazendaControllers : ControllerBase
             Area = dto.Area,
         };
 
-        _context.Fazendas.Add(fazenda);
+        _context.FazendasSP.Add(fazenda);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(nameof(GetFazendaById), new { id = fazenda.Id }, fazenda);
@@ -51,13 +51,13 @@ public class FazendaControllers : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Fazenda>>> GetFazendas()
     {
-        return await _context.Fazendas.ToListAsync();
+        return await _context.FazendasSP.ToListAsync();
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Fazenda>> GetFazendaById(int id)
     {
-        var fazenda = await _context.Fazendas
+        var fazenda = await _context.FazendasSP
             .Include(p => p.Agricultores) // Inclui os agricultores associados
             .FirstOrDefaultAsync(p => p.Id == id);
 
@@ -77,7 +77,7 @@ public class FazendaControllers : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var fazenda = await _context.Fazendas.FindAsync(id);
+        var fazenda = await _context.FazendasSP.FindAsync(id);
         if (fazenda == null)
         {
             return NotFound($"Fazenda com ID {id} não encontrado.");
@@ -95,13 +95,13 @@ public class FazendaControllers : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteFazenda(int id)
     {
-        var fazenda = await _context.Fazendas.FindAsync(id);
+        var fazenda = await _context.FazendasSP.FindAsync(id);
         if (fazenda == null)
         {
             return NotFound($"Fazenda com ID {id} não encontrado.");
         }
 
-        _context.Fazendas.Remove(fazenda);
+        _context.FazendasSP.Remove(fazenda);
         await _context.SaveChangesAsync();
 
         return NoContent();
