@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "n7uRRJg6JHB1ggiEbD9neTe7SxNbWq0OjwYIb6tYtAs=",
+  "Hash": "qcdQekol4LNx+fURPzlVkA1Ors/y0vOZu80Npzhel5Q=",
   "Source": "AgroClimate",
   "BasePath": "_content/AgroClimate",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AgroClimate\\wwwroot",
+      "Source": "AgroClimate",
+      "ContentRoot": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\",
+      "BasePath": "_content/AgroClimate",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
