@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/185a4b70-1183-42c7-b183-f3c8ac35eabd)# SprintAgroClimate
+# SprintAgroClimate
 
 Optamos por adotar a arquitetura monolítica para nosso projeto devido à sua simplicidade e integração inicial. Com essa abordagem, todas as funcionalidades estão agrupadas em um único código-base, o que pode facilitar o desenvolvimento e a implementação de forma mais coesa. A arquitetura monolítica é muitas vezes mais fácil de configurar inicialmente, pois permite uma integração direta entre todos os componentes do sistema.
 
@@ -16,6 +16,9 @@ Em resumo, ao adotarmos uma arquitetura monolítica com o padrão Singleton, imp
 
 TOKEN DE VALIDAÇÃO
 ![image](https://github.com/user-attachments/assets/7c771765-2a20-425d-948d-de3507976bd0)
+
+IA PARA PARA SUGERIR O ALIMENTO
+![image](https://github.com/user-attachments/assets/16541045-b0af-482e-8259-56ba51164405)
 
 
 O Aluno Felipe Batista é da turma 2TDSPY Enquanto os demais são do 2TDSPV.
