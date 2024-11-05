@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qcdQekol4LNx+fURPzlVkA1Ors/y0vOZu80Npzhel5Q=",
+  "Hash": "2clapcygZGPTFPDpTQKLODmmQdYxSTYKlmt+6iQcCOI=",
   "Source": "AgroClimate",
   "BasePath": "_content/AgroClimate",
   "Mode": "Default",
@@ -15,5 +15,25 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\MLModels\\ModeloCultura.zip",
+      "SourceId": "AgroClimate",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\",
+      "BasePath": "_content/AgroClimate",
+      "RelativePath": "MLModels/ModeloCultura.zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\MLModels\\ModeloCultura.zip"
+    }
+  ]
 }

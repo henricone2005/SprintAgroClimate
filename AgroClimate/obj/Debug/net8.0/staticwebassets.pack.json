@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\MLModels\\ModeloCultura.zip",
+      "PackagePath": "staticwebassets\\MLModels\\ModeloCultura.zip"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AgroClimate.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AgroClimate.props",
+      "PackagePath": "build\\AgroClimate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AgroClimate.props",
+      "PackagePath": "buildMultiTargeting\\AgroClimate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AgroClimate.props",
+      "PackagePath": "buildTransitive\\AgroClimate.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

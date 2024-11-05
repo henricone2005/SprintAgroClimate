@@ -1,1 +1,1 @@
-{"ContentRoots":["C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\"],"Root":{"Children":null,"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["C:\\Users\\henri\\Downloads\\Sprint\\SprintAgroClimate\\AgroClimate\\wwwroot\\"],"Root":{"Children":{"MLModels":{"Children":{"ModeloCultura.zip":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"MLModels/ModeloCultura.zip"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
